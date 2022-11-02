@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 
 	hdwallet "github.com/miguelmota/go-ethereum-hdwallet"
 	"github.com/tyler-smith/go-bip39"
@@ -61,6 +62,6 @@ func main() {
 			panic(err)
 		}
 
-		fmt.Printf("%s: %s 0x%s\n", path, account.Address.String(), priv)
+		fmt.Printf("%s: %s 0x%s\n", path, strings.ToLower(account.Address.String()), priv)
 	}
 }
